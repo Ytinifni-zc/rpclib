@@ -15,8 +15,8 @@ class this_server_test : public testing::Test {
 public:
     this_server_test()
         : s(test_port),
-          c1("127.0.0.1", test_port),
-          c2("127.0.0.1", test_port) {}
+          c1(LOCAL_HOST, test_port),
+          c2(LOCAL_HOST, test_port) {}
 
 protected:
     rpc::server s;

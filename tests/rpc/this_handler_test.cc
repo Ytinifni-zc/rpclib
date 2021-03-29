@@ -28,7 +28,7 @@ TEST_F(this_handler_test, set_error) {
     });
     s.async_run();
 
-    rpc::client c("127.0.0.1", test_port);
+    rpc::client c(LOCAL_HOST, test_port);
     EXPECT_THROW(c.call("errfunc"), std::runtime_error);
     EXPECT_THROW(c.call("errfunc"), rpc::rpc_error);
 
@@ -49,7 +49,7 @@ TEST_F(this_handler_test, error_obj) {
     });
     s.async_run();
 
-    rpc::client c("127.0.0.1", test_port);
+    rpc::client c(LOCAL_HOST, test_port);
     EXPECT_THROW(c.call("customerr"), std::runtime_error);
     EXPECT_THROW(c.call("customerr"), rpc::rpc_error);
 
@@ -72,7 +72,7 @@ TEST_F(this_handler_test, set_special_response) {
     });
     s.async_run();
 
-    rpc::client c("127.0.0.1", test_port);
+    rpc::client c(LOCAL_HOST, test_port);
     EXPECT_EQ(c.call("spec_func", false).as<int>(), 5);
     EXPECT_EQ(c.call("spec_func", true).as<std::string>(), text);
     EXPECT_THROW(c.call("spec_func", true).as<int>(), RPCLIB_MSGPACK::type_error);
@@ -82,7 +82,7 @@ TEST_F(this_handler_test, disable_response) {
     s.bind("noresp", []() { rpc::this_handler().disable_response(); });
     s.async_run();
 
-    rpc::client c("127.0.0.1", test_port);
+    rpc::client c(LOCAL_HOST, test_port);
     auto f = c.async_call("noresp");
     EXPECT_EQ(f.wait_for(std::chrono::milliseconds(50)), std::future_status::timeout);
 }
@@ -91,7 +91,7 @@ TEST_F(this_handler_test, enable_response) {
     s.bind("noresp", []() { rpc::this_handler().disable_response(); });
     s.async_run();
 
-    rpc::client c("127.0.0.1", test_port);
+    rpc::client c(LOCAL_HOST, test_port);
     auto f = c.async_call("noresp");
     EXPECT_EQ(f.wait_for(std::chrono::milliseconds(50)), std::future_status::timeout);
 }

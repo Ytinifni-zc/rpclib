@@ -8,6 +8,12 @@ include(msvc_support)
 include(coverage)
 include(check_warning_flag)
 
+if (CMAKE_GENERATOR STREQUAL "Ninja")
+  # Turn on colored output. https://github.com/ninja-build/ninja/wiki/FAQ
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")
+  set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fdiagnostics-color=always")
+endif ()
+
 #
 # Options
 #
@@ -201,8 +207,10 @@ if(RPCLIB_BUILD_EXAMPLES)
   set(RPCLIB_PROJECT_NAME "${CMAKE_PROJECT_NAME}")
   set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/localbuild")
   set(ENV{RPCLIB_DEFAULT_PORT} "${RPCLIB_DEFAULT_PORT}")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread") # reset flags
   add_subdirectory(examples/echo)
-  add_subdirectory(examples/mandelbrot)
+  add_subdirectory(examples/large_buffers)
+  #add_subdirectory(examples/mandelbrot)
   add_subdirectory(examples/calculator)
 endif()
 

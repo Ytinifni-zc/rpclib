@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="echo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\examples\;CMake Files\examples\calculator\;CMake Files\examples\echo\;CMake Files\examples\large_buffers\;CMake Files\cmake\;CMake Files\cmake\localbuild\;CMake Files\include\;CMake Files\include\rpc\;CMake Files\doc\;CMake Files\doc\pages\;CMake Files\tests\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="echo_client">
+				<Option output="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/echo_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASIO_STANDALONE"/>
+					<Add option="-DRPCLIB_ASIO=clmdep_asio"/>
+					<Add option="-DRPCLIB_FMT=clmdep_fmt"/>
+					<Add option="-DRPCLIB_MSGPACK=clmdep_msgpack"/>
+					<Add option="-DRPCLIB_CXX_STANDARD=14"/>
+					<Add option="-DRPCLIB_DEFAULT_PORT=8080"/>
+					<Add option="-DRPCLIB_MAC"/>
+					<Add directory="/Users/zhaocheng/git/rpclib/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 echo_client"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="echo_client/fast">
+				<Option output="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/echo_client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASIO_STANDALONE"/>
+					<Add option="-DRPCLIB_ASIO=clmdep_asio"/>
+					<Add option="-DRPCLIB_FMT=clmdep_fmt"/>
+					<Add option="-DRPCLIB_MSGPACK=clmdep_msgpack"/>
+					<Add option="-DRPCLIB_CXX_STANDARD=14"/>
+					<Add option="-DRPCLIB_DEFAULT_PORT=8080"/>
+					<Add option="-DRPCLIB_MAC"/>
+					<Add directory="/Users/zhaocheng/git/rpclib/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 echo_client/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="echo_server">
+				<Option output="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/echo_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASIO_STANDALONE"/>
+					<Add option="-DRPCLIB_ASIO=clmdep_asio"/>
+					<Add option="-DRPCLIB_FMT=clmdep_fmt"/>
+					<Add option="-DRPCLIB_MSGPACK=clmdep_msgpack"/>
+					<Add option="-DRPCLIB_CXX_STANDARD=14"/>
+					<Add option="-DRPCLIB_DEFAULT_PORT=8080"/>
+					<Add option="-DRPCLIB_MAC"/>
+					<Add directory="/Users/zhaocheng/git/rpclib/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 echo_server"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="echo_server/fast">
+				<Option output="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/echo_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DASIO_STANDALONE"/>
+					<Add option="-DRPCLIB_ASIO=clmdep_asio"/>
+					<Add option="-DRPCLIB_FMT=clmdep_fmt"/>
+					<Add option="-DRPCLIB_MSGPACK=clmdep_msgpack"/>
+					<Add option="-DRPCLIB_CXX_STANDARD=14"/>
+					<Add option="-DRPCLIB_DEFAULT_PORT=8080"/>
+					<Add option="-DRPCLIB_MAC"/>
+					<Add directory="/Users/zhaocheng/git/rpclib/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/../../../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin19/10.2.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 echo_server/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/zhaocheng/git/rpclib/cmake-build-debug/examples/echo/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/zhaocheng/git/rpclib/examples/echo/echo_client.cc">
+			<Option target="echo_client"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/examples/echo/echo_server.cc">
+			<Option target="echo_server"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/rpclib.pc.in">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/examples/calculator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\examples\calculator\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/examples/echo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\examples\echo\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/examples/large_buffers/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\examples\large_buffers\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/cmake/check_warning_flag.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/cmake/coverage.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/cmake/msvc_support.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/cmake/policies.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/cmake/rpclibConfig.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/cmake/localbuild/Findrpclib.cmake">
+			<Option virtualFolder="CMake Files\cmake\localbuild\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/include/rpc/config.h.in">
+			<Option virtualFolder="CMake Files\include\rpc\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/include/rpc/version.h.in">
+			<Option virtualFolder="CMake Files\include\rpc\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/doc/pages/versions.md.in">
+			<Option virtualFolder="CMake Files\doc\pages\"/>
+		</Unit>
+		<Unit filename="/Users/zhaocheng/git/rpclib/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tests\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

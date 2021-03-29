@@ -12,6 +12,8 @@
 namespace rpc {
 namespace testutils {
 
+const std::string LOCAL_HOST = "127.0.0.1";
+
 //! \brief Creates a unpacked messagepack containing its arguments.
 template <typename... Types>
 inline RPCLIB_MSGPACK::unpacked make_unpacked(Types... items) {
