@@ -1,1 +1,0 @@
-/usr/local/bin/g++-10   -pthread -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/echo_server.dir/echo_server.cc.o  -o echo_server  ../../librpc.a 

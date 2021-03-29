@@ -1,4 +1,0 @@
-"/Users/zhaocheng/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/203.7717.62/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/local/bin/gcc-10 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-10 -DRPCLIB_BUILD_TESTS=ON -DRPCLIB_ENABLE_LOGGING=ON -DRPCLIB_BUILD_EXAMPLES=ON -G "CodeBlocks - Unix Makefiles" /Users/zhaocheng/git/rpclib
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/zhaocheng/git/rpclib/cmake-build-debug
