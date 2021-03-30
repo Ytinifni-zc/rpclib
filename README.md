@@ -3,7 +3,7 @@
 
 [![waffle](https://badge.waffle.io/rpclib/rpclib.svg?columns=In%20Progress,Waiting%20For%20Release)](https://waffle.io/rpclib/rpclib)
 
-`rpclib` is a RPC library for C++, providing both a client and server implementation. It is built using modern C++14, and as such, requires a recent compiler. Main highlights:
+`rpclib` is a RPC library for C++, providing both a client and server implementation. It is built using modern C++17, and as such, requires a recent compiler. Main highlights:
 
   * Expose functions of your program to be called via RPC (from any language
     implementing msgpack-rpc)
