@@ -13,5 +13,5 @@ include_directories(${RPCLIB_INCLUDE_DIR})
 
 add_executable(server main.cc)
 target_link_libraries(server ${RPCLIB_LIBS})
-set_property(TARGET server PROPERTY CXX_STANDARD 14)
+set_property(TARGET server PROPERTY CXX_STANDARD 17)
 

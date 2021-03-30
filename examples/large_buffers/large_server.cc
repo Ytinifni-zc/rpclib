@@ -1,7 +1,7 @@
 #include "rpc/server.h"
 
 int main(int argc, char *argv[]) {
-    std::string host = "20.0.1.121";
+    std::string host = "0.0.0.0";
     uint16_t port = rpc::constants::DEFAULT_PORT;
     if (argc > 2) {
         host = std::string(argv[1]);

@@ -10,7 +10,7 @@ target_link_libraries(calculator_server ${RPCLIB_LIBS})
 set_target_properties(
         calculator_server
         PROPERTIES
-        CXX_STANDARD 14
+        CXX_STANDARD 17
         COMPILE_FLAGS "${CMAKE_CXX_FLAGS} ${RPCLIB_EXTRA_FLAGS}")
 target_compile_definitions(calculator_server PUBLIC ${RPCLIB_COMPILE_DEFINITIONS})
 
@@ -19,6 +19,6 @@ target_link_libraries(calculator_client ${RPCLIB_LIBS})
 set_target_properties(
         calculator_client
         PROPERTIES
-        CXX_STANDARD 14
+        CXX_STANDARD 17
         COMPILE_FLAGS "${CMAKE_CXX_FLAGS} ${RPCLIB_EXTRA_FLAGS}")
 target_compile_definitions(calculator_client PUBLIC ${RPCLIB_COMPILE_DEFINITIONS})

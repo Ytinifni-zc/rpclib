@@ -37,7 +37,7 @@ struct client::impl {
           state_(client::connection_state::initial),
           writer_(std::make_shared<detail::async_writer>(
               &io_, RPCLIB_ASIO::ip::tcp::socket(io_))),
-          timeout_(nonstd::nullopt) {
+          timeout_(std::nullopt) {
         pac_.reserve_buffer(default_buffer_size);
     }
 
@@ -127,7 +127,7 @@ struct client::impl {
         writer_->write(std::move(item));
     }
 
-    nonstd::optional<int64_t> get_timeout() {
+    std::optional<int64_t> get_timeout() {
         return timeout_;
     }
 
@@ -136,7 +136,7 @@ struct client::impl {
     }
 
     void clear_timeout() {
-        timeout_ = nonstd::nullopt;
+        timeout_ = std::nullopt;
     }
 
     using call_t =
@@ -156,7 +156,7 @@ struct client::impl {
     std::thread io_thread_;
     std::atomic<client::connection_state> state_;
     std::shared_ptr<detail::async_writer> writer_;
-    nonstd::optional<int64_t> timeout_;
+    std::optional<int64_t> timeout_;
     RPCLIB_CREATE_LOG_CHANNEL(client)
 };
 
@@ -217,7 +217,7 @@ client::connection_state client::get_connection_state() const {
     return pimpl->get_connection_state();
 }
 
-nonstd::optional<int64_t> client::get_timeout() const {
+std::optional<int64_t> client::get_timeout() const {
     return pimpl->get_timeout();
 }
 

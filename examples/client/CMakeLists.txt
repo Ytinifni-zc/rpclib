@@ -12,5 +12,5 @@ include_directories(${RPCLIB_INCLUDE_DIR})
 
 add_executable(client main.cc)
 target_link_libraries(client ${RPCLIB_LIBS})
-set_property(TARGET client PROPERTY CXX_STANDARD 14)
+set_property(TARGET client PROPERTY CXX_STANDARD 17)
 
