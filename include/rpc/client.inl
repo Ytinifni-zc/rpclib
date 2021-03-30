@@ -21,7 +21,7 @@ client::async_call(std::string const &func_name, Args... args) {
     RPCLIB_CREATE_LOG_CHANNEL(client)
     wait_conn();
     using RPCLIB_MSGPACK::object;
-    LOG_DEBUG("Calling {}", func_name);
+    RPCLIB_LOG_DEBUG("Calling {}", func_name);
 
     auto args_obj = std::make_tuple(args...);
     const int idx = get_next_call_idx();
@@ -51,7 +51,7 @@ client::async_call(std::string const &func_name, Args... args) {
 template <typename... Args>
 void client::send(std::string const &func_name, Args... args) {
     RPCLIB_CREATE_LOG_CHANNEL(client)
-    LOG_DEBUG("Sending notification {}", func_name);
+    RPCLIB_LOG_DEBUG("Sending notification {}", func_name);
 
     auto args_obj = std::make_tuple(args...);
     auto call_obj = std::make_tuple(

@@ -41,7 +41,7 @@ response dispatcher::dispatch_call(RPCLIB_MSGPACK::object const &msg,
     auto it_func = funcs_.find(name);
 
     if (it_func != end(funcs_)) {
-        LOG_DEBUG("Dispatching call to '{}'", name);
+        RPCLIB_LOG_DEBUG("Dispatching call to '{}'", name);
         try {
             auto result = (it_func->second)(args);
             return response::make_result(id, std::move(result));
@@ -99,7 +99,7 @@ response dispatcher::dispatch_notification(RPCLIB_MSGPACK::object const &msg,
     auto it_func = funcs_.find(name);
 
     if (it_func != end(funcs_)) {
-        LOG_DEBUG("Dispatching call to '{}'", name);
+        RPCLIB_LOG_DEBUG("Dispatching call to '{}'", name);
         try {
             auto result = (it_func->second)(args);
         } catch (rpc::detail::handler_error &) {

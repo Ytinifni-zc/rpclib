@@ -42,25 +42,25 @@ struct client::impl {
     }
 
     void do_connect(tcp::resolver::iterator endpoint_iterator) {
-        LOG_INFO("Initiating connection.");
+        RPCLIB_LOG_INFO("Initiating connection.");
         RPCLIB_ASIO::async_connect(
             writer_->socket_, endpoint_iterator,
             [this](std::error_code ec, tcp::resolver::iterator) {
                 if (!ec) {
                     std::unique_lock<std::mutex> lock(mut_connection_finished_);
-                    LOG_INFO("Client connected to {}:{}", addr_, port_);
+                    RPCLIB_LOG_INFO("Client connected to {}:{}", addr_, port_);
                     is_connected_ = true;
                     state_ = client::connection_state::connected;
                     conn_finished_.notify_all();
                     do_read();
                 } else {
-                    LOG_ERROR("Error during connection: {}", ec);
+                    RPCLIB_LOG_ERROR("Error during connection: {}", ec);
                 }
             });
     }
 
     void do_read() {
-        LOG_TRACE("do_read");
+        RPCLIB_LOG_TRACE("do_read");
         constexpr std::size_t max_read_bytes = default_buffer_size;
         writer_->socket_.async_read_some(
             RPCLIB_ASIO::buffer(pac_.buffer(), max_read_bytes),
@@ -68,7 +68,7 @@ struct client::impl {
             // (since it's constexpr), but MSVC insists.
             [this, max_read_bytes](std::error_code ec, std::size_t length) {
                 if (!ec) {
-                    LOG_TRACE("Read chunk of size {}", length);
+                    RPCLIB_LOG_TRACE("Read chunk of size {}", length);
                     pac_.buffer_consumed(length);
 
                     RPCLIB_MSGPACK::unpacked result;
@@ -98,12 +98,12 @@ struct client::impl {
                     // to resize its buffer doubling its size
                     // (https://github.com/msgpack/msgpack-c/issues/567#issuecomment-280810018)
                     if (pac_.buffer_capacity() < max_read_bytes) {
-                        LOG_TRACE("Reserving extra buffer: {}", max_read_bytes);
+                        RPCLIB_LOG_TRACE("Reserving extra buffer: {}", max_read_bytes);
                         pac_.reserve_buffer(max_read_bytes);
                     }
                     do_read();
                 } else if (ec == RPCLIB_ASIO::error::eof) {
-                    LOG_WARN("The server closed the connection.");
+                    RPCLIB_LOG_WARN("The server closed the connection.");
                     state_ = client::connection_state::disconnected;
                 } else if (ec == RPCLIB_ASIO::error::connection_reset) {
                     // Yes, this should be connection_state::reset,
@@ -111,9 +111,9 @@ struct client::impl {
                     // asio bug, may be a windows socket pecularity. Should be
                     // investigated later.
                     state_ = client::connection_state::disconnected;
-                    LOG_WARN("The connection was reset.");
+                    RPCLIB_LOG_WARN("The connection was reset.");
                 } else {
-                    LOG_ERROR("Unhandled error code: {} | '{}'", ec,
+                    RPCLIB_LOG_ERROR("Unhandled error code: {} | '{}'", ec,
                               ec.message());
                 }
             });
