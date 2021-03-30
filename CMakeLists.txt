@@ -107,7 +107,6 @@ add_library(${PROJECT_NAME}
   lib/rpc/detail/server_session.cc
   lib/rpc/detail/response.cc
   lib/rpc/detail/client_error.cc
-  lib/rpc/nonstd/optional.cc
   ${DEP_SOURCES}
   ${DEP_HEADERS}
   ${RPCLIB_HEADERS})
